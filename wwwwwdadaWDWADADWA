@@ -1,8 +1,9 @@
 
 -- DONT double inject/execute, it will freeze you, not your game but your player.
+script_key = 'FasBKfZZKijyEILdSVOTpYikZPLKUsbc'; -- add ur key here
+
 getgenv().Eclipse= {
     Main = {
-    AuthencationKey = "",
     Build = "V1"-- dont change
     },
     SilentAim = {
@@ -57,4 +58,4 @@ getgenv().Eclipse= {
     }
 } 
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fb0dfcac23e70a5130aac1966b075632.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3bac89e4a45040f37d5d4fecd6af8762.lua"))()
