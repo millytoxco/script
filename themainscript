@@ -1,3 +1,4 @@
+script_key = ""; -- add ur key here
 getgenv().Private = {
     Main = {
         Build = "V1"-- dont change
