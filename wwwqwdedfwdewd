@@ -1,133 +1,39 @@
-script_key = ""; -- add ur key here
-
-getgenv().eclipse = {
-    ['Core'] = {
-        ['Version'] = 'v1.0',
+getgenv().Private = {
+    Main = {
+        Build = "V1"-- dont change
     },
-    ['Silent Aim'] = {
-        ['Enabled'] = true,
-        ['Checks'] = {'Wall', 'Knocked', 'Grabbed', 'Vehicle'}, -- [[ Wall, Knocked, Grabbed, Vehicle ]]
-        ['Keybind'] = 'Y',
-        ['Hit Location'] = {
-            ['Type'] = 'Closest Part', -- [[ Closest Part or Closest Point ]]
-            ['Parts'] = {'Head', 'UpperTorso', 'HumanoidRootPart', 'LowerTorso', 'LeftHand', 'RightHand', 'LeftLowerArm', 'RightLowerArm', 'LeftUpperArm', 'RightUpperArm', 'LeftFoot', 'LeftLowerLeg',  'LeftUpperLeg', 'RightLowerLeg', 'RightFoot',  'RightUpperLeg'} --- you can put more than one parts
-        },
-        ['Fov'] = {
-            ['Enabled'] = true,
-                ['Value'] = 13,
-                ['Show Fov'] = false,
-        },
-        ['Prediction'] = {
-            ['Sets'] = {
-                ["Low"] = 0.1431,
-                ["Medium"] = 0.1842,
-                ["High"] = 0.19231,
-                ["Extreme"] = 0.12314,
-
-            }
-        },
+    SilentAim = {
+        Enabled = true,
+        SilentHitChance = 100,
+        TargetHitPart = "Head",
+        SafeMode = true,
+        DynamicPrediction = false,
+        PredictionForSilent = 0.01,
+        LockedTarget = nil,
+        IsBeingSpectated = nil,
+        OriginalIndex = nil,
+        AntiAimViewer = true,
+        FOV = 290, 
+        ShowFOV = false, 
+        FOVColor = Color3.fromRGB(255, 255, 255), 
+        FOVThickness = 1.5, 
+        FOVTransparency = 0.7 
     },
-    ['Target Aim'] = {
-        ['Enabled'] = true,
-        ['Checks'] = {'Wall', 'Knocked', 'Grabbed', 'Vehicle'},
-        ['Keybind'] = 'E',
-        ['Hit Location'] = {
-            ['Type'] = 'Closest Point', -- [[ Closest Part or Closest Point ]]
-            ['Parts'] = {'Head', 'UpperTorso', 'HumanoidRootPart', 'LowerTorso', 'LeftHand', 'RightHand', 'LeftLowerArm', 'RightLowerArm', 'LeftUpperArm', 'RightUpperArm', 'LeftFoot', 'LeftLowerLeg',  'LeftUpperLeg', 'RightLowerLeg', 'RightFoot',  'RightUpperLeg'} --- you can put more than one parts
-        },
-        ['Fov'] = {
-            ['Enabled'] = true,
-                ['Value'] = 8.5,
-                ['Show Fov'] = false,
-        },
-        ['Prediction'] = {
-            ['Sets'] = {
-                ["Low"] = 0,
-                ["Medium"] = 0,
-                ["High"] = 0,
-                ["Extreme"] = 0,
-
-            }
-        },
+    Aimbot = {
+        Enabled = true,
+        Smoothness = 0.25,
+        AimPart = "Head",
+        FOV = 150,
+        LockOnKey = Enum.KeyCode.Q,
+        LockedTarget = nil
     },
-    ['Camlock'] = {
-        ['Enabled'] = true,
-        ['Keybind'] = 'Q',
-        ['Checks'] = {'Wall', 'Knocked', 'Grabbed', 'Vehicle'},
-        ['Fov'] = 10,
-        ['Show Fov'] = false,
-        
-        ['Value'] = {
-            ['Snappiness'] = 0.123,
-            ['ThirdPerson'] = false,
-            ['FirstPerson'] = true, 
-        },
-    
-        ['Hit Location'] = {
-            ['Type'] = 'Closest Part', -- [[ Closest Part or Closest Point ]]
-            ['Parts'] = {'Head', 'UpperTorso', 'HumanoidRootPart', 'LowerTorso', 'LeftHand', 'RightHand', 'LeftLowerArm', 'RightLowerArm', 'LeftUpperArm', 'RightUpperArm', 'LeftFoot', 'LeftLowerLeg',  'LeftUpperLeg', 'RightLowerLeg', 'RightFoot',  'RightUpperLeg'}
-        },
-    
-        ['Prediction'] = {  
-            ['Low'] = 0.1225, 
-            ['Medium'] = 0.1225, 
-            ['High'] = 0.1225 
-        }
-    },
-    ['Trigger bot'] = {
-        ['Enabled'] = true,
-        ['Prediction'] = 0,
-        ['Weapons'] = {
-            '[Double-Barrel SG]',
-            '[Revolver]',
-            '[TacticalShotgun]'
-        },
-        ['Keybind'] = {
-            ['Bind'] = 'T',
-            ['Keybind Mode'] = 'Toggle' -- hold or toggle
-        },
-        ['Delay'] = {    
-            ['Value'] = 0.01,
-        },
-        ['HitParts'] = {
-            ['Type'] = false,
-            ['Parts'] = {'Head', 'UpperTorso', 'HumanoidRootPart', 'LowerTorso', 'LeftHand', 'RightHand', 'LeftLowerArm', 'RightLowerArm', 'LeftUpperArm', 'RightUpperArm', 'LeftFoot', 'LeftLowerLeg',  'LeftUpperLeg', 'RightLowerLeg', 'RightFoot',  'RightUpperLeg'}
-        },
-        ['Custom Size'] = {
-            ['Enabled'] = true, 
-            ['Value'] = 13
-        },
-    },
-    ['Range'] = {
-        ['Enabled'] = true, --- how far you want them to sense someone
-        ['Silent Aim'] = 250,
-        ['Camlock'] = 250,
-        ['Trigger bot'] = 250
-    },
-    ['Speed Modifications'] = {
-        ['Options'] = {
-            ['Enabled'] = true, -- reset before working
-            ['DefaultSpeed'] = 35,
-            ['ToggleMode'] = false, -- if you want togglemovement to work
-            ['Keybinds'] = {
-                ['ToggleMovement'] = 'V',
-                ['Speed +5'] = 'M',
-                ['Speed -5'] = 'N'
-            }
-        }
-    },
-    ['Spread modifications'] = { 
-        ['Mode'] = "Randomizer", -- Normal or Randomizer
-        ['Spread Modifier'] = {
-            Multiplier = 0.1
-        },
-        ['Spread Randomizer'] = {
-            Start = 1,
-            End = 1
-        },
-        ['Enabled'] = false,
-        ['Toggle Key'] = "G"
-    },
+    ESP = {
+        Enabled = false,         -- Master ESP toggle
+        Color = Color3.fromRGB(0,0,0), -- ESP color (black)
+        ShowNames = true,       -- Show player names
+        ShowTracers = true,     -- Show tracers
+        ShowDistance = true,    -- Show distance
+        ShowHealth = false      -- Show health (set to false, no health check)
+    }
 }
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c5f8aefa7deede96c06c488c2aad2e10.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bcff791183d153e015aa91184fa191ec.lua"))()
