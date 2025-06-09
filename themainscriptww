@@ -37,4 +37,4 @@ getgenv().Private = {
         ShowHealth = false      -- Show health (set to false, no health check)
     }
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bcff791183d153e015aa91184fa191ec.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/665f63ee0438ce0f77afc55cd0b1c1e3.lua"))()
