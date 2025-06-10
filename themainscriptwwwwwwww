@@ -244,4 +244,4 @@ getgenv().Private = {
 		},
 	}
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e2d042d7dd932dae86601304f06a57b3.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/671eb64c5a38813b24d72b613714e87f.lua"))()
