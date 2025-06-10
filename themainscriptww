@@ -1,40 +1,247 @@
-script_key = ""; -- add ur key here
+script_key = ''; -- add ur key here
+
 getgenv().Private = {
-    Main = {
-        Build = "V1"-- dont change
-    },
-    SilentAim = {
-        Enabled = true,
-        SilentHitChance = 100,
-        TargetHitPart = "Head",
-        SafeMode = true,
-        DynamicPrediction = false,
-        PredictionForSilent = 0.01,
-        LockedTarget = nil,
-        IsBeingSpectated = nil,
-        OriginalIndex = nil,
-        AntiAimViewer = true,
-        FOV = 290, 
-        ShowFOV = false, 
-        FOVColor = Color3.fromRGB(255, 255, 255), 
-        FOVThickness = 1.5, 
-        FOVTransparency = 0.7 
-    },
-    Aimbot = {
-        Enabled = true,
-        Smoothness = 0.25,
-        AimPart = "Head",
-        FOV = 150,
-        LockOnKey = Enum.KeyCode.Q,
-        LockedTarget = nil
-    },
-    ESP = {
-        Enabled = false,         -- Master ESP toggle
-        Color = Color3.fromRGB(0,0,0), -- ESP color (black)
-        ShowNames = true,       -- Show player names
-        ShowTracers = true,     -- Show tracers
-        ShowDistance = true,    -- Show distance
-        ShowHealth = false      -- Show health (set to false, no health check)
-    }
+	['Global'] = {
+		['Enabled'] = true,
+
+		['Check'] = {
+			['Whilst a player is selected'] = {
+				['Knocked'] = true,
+				['Self-Knocked'] = true,
+				['Visible'] = true,
+			},
+
+			['When selecting a player'] = {
+				['Knocked'] = true,
+				['Self-Knocked'] = true,
+				['Visible'] = true,
+			}
+		},
+
+		['Keybind'] = "T"
+	},
+
+	['Silent Aimbot'] = {
+		['Enabled'] = true,
+		['Hit Part'] = 'Closest Point',
+
+		['Prediction'] = {
+			['X'] = 0,
+			['Y'] = 0,
+			['Z'] = 0
+		},
+
+		['Closest Point'] = {
+			['Mode'] = 'Advanced',
+			['Point Scale'] = 3.5
+		},
+
+		['Client Bullet Redirection'] = {
+			['Enabled'] = false,
+
+			['Prediction'] = {
+				['X'] = 0.038,
+				['Y'] = 0.032,
+				['Z'] = 0.038
+			},
+
+			['Weapons'] = {
+				'[Double-Barrel SG]',
+				'[Revolver]',
+				'[TacticalShotgun]',
+				'[[Rifle]',
+			}
+		}, 
+
+		['FOV'] = {
+			['Enabled'] = false,
+
+			['Size'] = {
+				['X'] = 14,
+				['Y'] = 14,
+				['Z'] = 14
+			},
+
+			['Weapon Configuration'] = {
+				['Enabled'] = true,
+
+				['Shotguns'] = {
+					['X'] = 15,
+				    ['Y'] = 15,
+				    ['Z'] = 15
+				},
+
+				['Pistols'] = {
+					['X'] = 15,
+					['Y'] = 15,
+					['Z'] = 18
+				},
+
+				['Others'] = {
+					['X'] = 15,
+					['Y'] = 15,
+					['Z'] = 15
+				}
+			}
+		}
+	},
+
+	['Camera Aimbot'] = {
+		['Enabled'] = false,
+		['Hit Part'] = 'Closest Part',
+		['Snappiness'] = 0.00200,
+
+		['Prediction'] = {
+			['X'] = 0.1225,
+			['Y'] = 0,
+			['Z'] = 0.121
+		},
+
+		['Camera Modes'] = {
+			['Shift Locked'] = true,
+			['Third Person'] = false,
+			['First Person'] = true
+		},
+
+		['FOV'] = {
+			['Enabled'] = false,
+
+			['Size'] = {
+				['X'] = 0,
+				['Y'] = 0,
+				['Z'] = 0
+			},
+
+			['Weapon Configuration'] = {
+				['Enabled'] = false,
+
+				['Shotguns'] = {
+					['X'] = 0,
+					['Y'] = 0,
+					['Z'] = 0
+				},
+
+				['Pistols'] = {
+					['X'] = 0,
+					['Y'] = 0,
+					['Z'] = 0
+				},
+
+				['Others'] = {
+					['X'] = 0,
+					['Y'] = 0,
+					['Z'] = 0
+				}
+			}
+		}
+	},
+
+	['Trigger Bot'] = {
+		['Enabled'] = true,
+		['Click Cooldown'] = 0,
+
+		['Weapons'] = {
+			'[Double-Barrel SG]',
+			'[Revolver]',
+			'[TacticalShotgun]',
+            '[[Rifle]'
+		},
+
+		['Prediction'] = {
+			['X'] = 0,
+			['Y'] = 0,
+			['Z'] = 0
+		},
+
+		['Activation'] = {
+			['Activation Mode'] = 'Toggle',
+			['Activation Bind'] = 'T'
+		},
+
+		['FOV'] = {
+			['X'] = 13,
+			['Y'] = 13,
+			['Z'] = 13
+		},
+	},
+
+	['Velocity Calculation'] = {
+		['Enabled'] = true,
+		['Magnitude'] = 100
+	},
+
+	['Weapon Modifications'] = {
+		['Spread Modifications'] = {
+			['Enabled'] = true,
+
+			['[Double-Barrel SG]'] = {
+				Multiplier = 0.01
+			},
+
+			['[TacticalShotgun]'] = {
+				Multiplier = 0.01
+			},
+
+			['[Shotgun]'] = {
+				Multiplier = 0.01
+			},
+
+			['[DrumShotgun]'] = {
+				Multiplier = 0.01
+			}
+		}
+	},
+
+	['Movement Modifications'] = {
+		['Slowdown Modifications'] = {
+			['Enabled'] = true,
+
+			['Weapons'] = {
+				['[Double-Barrel SG]'] = {
+					Multiplier = 0.0
+				},
+
+				['[TacticalShotgun]'] = {
+					Multiplier = 0.0
+				},
+
+				['[Revolver]'] = {	
+					Multiplier = 0.0
+				},
+
+				['[AUG]'] = {
+					Multiplier = 0.8
+				},
+
+				['[Silencer]'] = {
+					Multiplier = 0.0
+				},
+
+				['[Glock]'] = {
+					Multiplier = 0.0
+				},
+			}
+		},
+
+		['Speed Modifications'] = {
+			['Enabled'] = false,
+
+			['Normal'] = {
+				['Multiplier'] =  0.35
+			},
+
+			['Shooting'] = {
+				['Multiplier'] =  0.35
+			},
+
+			['Reloading'] = {
+				['Multiplier'] =  0.35
+			},
+
+			['Low Health'] = {
+				['Multiplier'] = 0.35
+			}
+		},
+	}
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/665f63ee0438ce0f77afc55cd0b1c1e3.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/9629850f891cddaf0402cdf7c7abaf0f.lua"))()
